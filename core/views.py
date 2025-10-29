@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render # importamos la función render para renderizar templates
 from datetime import date
 
 # 🔹 Function-Based View para la página de inicio
@@ -12,9 +12,9 @@ def home_view(request):
         "subtitulo": "Lavados a domicilio en Jujuy",
         "hoy": date.today(),
         "servicios_destacados": [
-            {"nombre": "Lavado exterior", "precio": 6000},
-            {"nombre": "Lavado completo", "precio": 12000},
-            {"nombre": "Limpieza de tapizados", "precio": 18000},
+            {"nombre": "Lavado exterior", "precio": 8000},
+            {"nombre": "Lavado completo", "precio": 14000},
+            {"nombre": "Limpieza de tapizados", "precio": 35000},
         ]
     }
     # render(request, template, contexto)
@@ -27,5 +27,22 @@ def home_view(request):
     #   (strings, números, fechas, listas, dicts, QuerySets, objetos, etc.).
     # La función devuelve un objeto HttpResponse ya renderizado.
     return render(request, "core/home.html", context)
+
+
+def galeria_view(request):
+       
+       context = {
+          
+       }
+
+       return render(request, "core/galeria.html", context)
+
+def contacto_view(request):
+       
+       context = {
+          
+       }
+
+       return render(request, "core/contacto.html", context)
 
 

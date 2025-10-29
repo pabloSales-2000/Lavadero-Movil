@@ -1,0 +1,23 @@
+{% extends "../core/base.html" %}
+
+{% block title %}Servicios - Lavadero Móvil{% endblock %}
+
+{% block content %}
+  <h1 class="mb-4">Nuestros servicios</h1>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for s in servicios %}
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{ s.nombre }}</h5>
+            <p class="card-text">Precio: ${{ s.precio }}</p>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>No hay servicios para mostrar.</p>
+    {% endfor %}
+  </div>
+
+{% endblock %}

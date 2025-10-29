@@ -19,5 +19,7 @@ from django.urls import path, include # include permite importar otro archivo de
                                       # dividiendo el ruteo por apps para mayor orden.
 urlpatterns = [     # esto es una lista de rutas
     path('admin/', admin.site.urls),
-    path("", include("core.urls", namespace="core")),  # cuando la url es /, incluye las rutas definidas en core/urls.py
+    path("", include("core.urls", namespace="core")),
+    path("servicios/", include("servicios.urls", namespace="servicios")),
+    path("galeria/", include("galeria.urls", namespace="galeria")) # Todo lo que venga después de la raíz ("") lo va a manejar el archivo core/urls.py
 ]
